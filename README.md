@@ -19,7 +19,7 @@ Google Antigravity, no Gemini CLI, no Claude Code e em qualquer agente que leia 
 Mac ou Linux, no Terminal:
 
 ```bash
-git clone https://github.com/USUARIO/skills-estudo-medico.git
+git clone https://github.com/IvanLucasPicone/skills-estudo-medico.git
 cd skills-estudo-medico
 ./instalar.sh
 ```
@@ -27,7 +27,7 @@ cd skills-estudo-medico
 Windows, no PowerShell:
 
 ```powershell
-git clone https://github.com/USUARIO/skills-estudo-medico.git
+git clone https://github.com/IvanLucasPicone/skills-estudo-medico.git
 cd skills-estudo-medico
 .\instalar.ps1
 ```
