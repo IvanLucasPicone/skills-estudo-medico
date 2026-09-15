@@ -91,4 +91,8 @@ aberto com o complemento AnkiConnect por `scripts/anki_connect.py` (Python 3, se
 ## Origem
 
 Fonte mantida por Ivan Lucas Picone Borges dos Anjos (endocrinologista, HUAP/UFF). Este
-repositório é gerado a partir da fonte por script; edite lá, não aqui.
+repositório distribui uma adaptação pública das fontes canônicas. Atualizações devem preservar exemplos genéricos e referências locais, sem depender da wiki privada.
+
+Sincronização de 15/09/2026: seis skills atualizadas com as revisões canônicas disponíveis até 13/09/2026; inclui regras para graduação, ordem do item, registro técnico e normalização HTML no helper do Anki. Os arquivos PURPOSE.md documentam o propósito dos três geradores. O recorte permanece em seis skills.
+
+O helper do Anki recebe campos de texto e normaliza entidades HTML antes de calcular o UID. Não enviar HTML de formatação nos campos: ele será tratado como texto. Remover linhas de metadados antes de exportar cartões.

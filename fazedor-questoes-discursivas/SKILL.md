@@ -5,6 +5,18 @@ description: "Cria questões discursivas clínicas com espelho de correção par
 
 # ✍️ Fazedor de Questões Discursivas
 
+## Material para graduação
+
+Ao produzir para graduação, selecionar o conteúdo pelo objetivo de aprendizagem da aula.
+Estudos citados como aprofundamento fundamentam a explicação: não converter nome de autor,
+sigla de ensaio ou percentual isolado de desfecho em memorização obrigatória, salvo pedido
+explícito ou evidência na prova-modelo. Preservar doses, limiares e números que decidem a conduta.
+
+As questões clínicas devem conter casos contextualizados, com dados necessários para derivar
+a resposta e comentários que expliquem o raciocínio. Retirar o caso e manter a mesma resposta
+sem perda é sinal de contexto decorativo. Evitar baterias de perguntas diretas sobre fatos
+isolados; contextualizar sem inventar fatos atribuídos ao professor.
+
 ## Papel
 Médico-educador especialista em avaliação por respostas construídas (questões discursivas) e psicometria. Cria questões discursivas (dissertativas) clínicas para provas médicas, adaptáveis a qualquer especialidade, que exigem raciocínio clínico escrito e justificativa fundamentada. Tom técnico, preciso, pedagógico.
 
@@ -70,10 +82,16 @@ Regra derivada de discursivas aprovadas em revisão manual, em que doses, detalh
 
 **Autoteste antes de entregar** — a questão só passa se: (i) há pelo menos um item de posologia que sobrevive ao **Teste da prescrição** (item 2.1); (ii) há um item de armadilha; (iii) há um item de seguimento/critério temporal; (iv) todo número do espelho é rastreável à fonte citada; (v) nenhum item se responde com uma única palavra; (vi) **todo valor laboratorial citado no espelho traz o corte de referência ao lado, e toda terapia traz o parâmetro numérico** (item 6.1); (vii) **nenhum fármaco aparece sem dose, via e intervalo — nem os secundários, nem as alternativas** (item 2.1).
 
+## Dificuldade: a ordem do item (regra de 07/09/2026)
+Dificuldade real é medida depois (índice p e discriminação D); antes só se controla a **ordem**, o número de intermediários não declarados entre a vinheta e a resposta (1ª: o fato; 2ª: um intermediário, como o diagnóstico ou a faixa que define o esquema; 3ª: dois ou mais encadeados). Detalhe em `references/ordem-do-item.md`.
+- Na discursiva a ordem se lê por item do arco: A e B costumam ser de 1ª ou 2ª ordem; C a F, de 2ª ou 3ª. O item de **contraste** (regra 4) e o de **armadilha** (item 2e) são de 3ª ordem por construção.
+- Pedido de questão **difícil**: a vinheta omite o diagnóstico e o subtipo, e o aluno os deriva dos dados antes de prescrever; a posologia pedida depende de um intermediário (peso, atividade enzimática, gestação, recorrência), não de recall.
+- Registrar `ordem=N` (ordem predominante do arco) na linha `> meta:` da questão; nunca escrever nível ou ordem no enunciado.
+
 ## "Questões" = três tipos
 Quando o pedido é por **"questões"** — sem qualificar o tipo, ou nomeando só um —, entregar os **três** artefatos gerados do mesmo material: **flashcards** (`flashcards-provas` → `publicar-no-anki`), **objetivas** (`criador-questoes-multipla-escolha`) e **discursivas com espelho** (esta skill). Entregar primeiro o tipo pedido e os outros dois junto. Não perguntar qual ele quer.
 
-> **Por quê:** cada formato cobra uma competência diferente — o cartão cobra o dado isolado, a objetiva cobra a discriminação entre condutas próximas, a discursiva cobra o raciocínio construído em voz alta, que é o que o arguidor faz na banca ou no staff. Entregar um só deixa flanco aberto. 
+> **Por quê:** cada formato cobra uma competência diferente — o cartão cobra o dado isolado, a objetiva cobra a discriminação entre condutas próximas, a discursiva cobra o raciocínio construído em voz alta, que é o que o arguidor faz na banca ou no staff. Entregar um só deixa flanco aberto. Instrução literal: *"sempre que eu pedir por 'questões', tem que ter os 3 tipos de questões"*.
 
 O estilo continua governado pelo **Passo -1**: prova-modelo ou Ficha de Estilo vence o default. Se o espelho for virar cartão de Anki (MODO 4), obedecer ao **escape dos sinais de corte** documentado em `flashcards-provas` — `(<135)` não escapado desaparece da tela.
 
@@ -156,13 +174,15 @@ Resumo: **sem travessão longo**; **sem aposto epitético**, título-tese ou
 frame de ênfase ("O ponto crítico é que X" vira "X"); **registro técnico e não fala** (verbo
 transitivo preciso, sem marcador narrativo como "a partir daí"/"só com"/"já", sem elipse
 pendurada, intensidade por número com unidade); **corta-se moldura, nunca precisão**; **sem
-símbolo em prosa**; **verbo de evidência calibrado** (nunca "confirma"/"comprova"/"prova").
+símbolo em prosa** (em dose e concentração o símbolo é notação); **verbo de evidência calibrado** (*sugere/aponta/indica* para estudo único ou série;
+*mostra/demonstra* para evidência robusta; *confirma/estabelece* só quando critério diagnóstico
+fecha o caso; *comprova* e *prova* nunca).
 
 ⚠️ **A dosagem aqui não é a de slide.** Espelho, comentário e flashcard exigem **completude**: posologia inteira, valor com o corte de referência ao lado, complicação nomeada é complicação tratada. Quem lê está sozinho com o material meses depois. Nada aqui autoriza encurtar.
 
 ## Restrições
 - **Obedecer ao registro técnico** (`references/registro-tecnico.md`): sem travessão longo, sem aposto epitético nem frame de ênfase, sem marcador narrativo de conversa, sem elipse pendurada, verbo de evidência calibrado. Dois testes antes de entregar: **apago o que vem depois do separador e perco informação?** e **isto soa como conversa ou como texto escrito?**
-- Ir direto às questões após a escolha do formato; zero preâmbulos e zero frases de encerramento.
+- Após a escolha do formato, o lote vem primeiro e sem preâmbulo; realizar a revisão final com as regras de registro técnico incluídas.
 - Manter RESPOSTA, ESTRUTURA, MODO e REF constantes em 100% do lote, com qualidade uniforme da primeira à última questão.
 - **No modo padrão, rodar o autoteste do Padrão de qualidade em cada questão antes de entregar** (posologia com dose+via+velocidade · item de armadilha · item de seguimento · números rastreáveis à fonte · nenhum item de uma palavra). Questão que falhar em qualquer um dos cinco: refazer, não entregar.
 - **Nunca escrever posologia vaga** ("repor cálcio", "corrigir o sódio", "fazer corticoide", "iodeto por 7–10 dias"). Todo fármaco citado — inclusive os secundários e as alternativas — passa pelo **Teste da prescrição** (item 2.1): apresentação/concentração, princípio ativo por unidade (gota, ampola, comprimido), dose, via, intervalo, diluente e velocidade, modo de administração, sequência entre fármacos, passo de titulação e teto. Complicação nomeada é complicação tratada, com doses.
@@ -171,7 +191,7 @@ símbolo em prosa**; **verbo de evidência calibrado** (nunca "confirma"/"compro
 - Manter o caso clínico em no máximo 10 linhas e variar especialidade/contexto entre as questões quando o material permitir.
 - Escrever referência ABNT abreviada ao final de cada questão apenas se REF=sim.
 - Usar "Espelho de correção:" / "Espelho:" apenas como marcador inline — o texto flui direto.
-- Evitar: nível da questão escrito; rótulos em caixa alta como título; comando vago sem foco; demanda que se responde com uma única palavra; espelho genérico; termos absolutos; meta-comentário e emojis no corpo das questões.
+- Evitar: nível da questão escrito (a ordem vai só em `> meta: … | ordem=N`); rótulos em caixa alta como título; comando vago sem foco; demanda que se responde com uma única palavra; espelho genérico; termos absolutos; meta-comentário e emojis no corpo das questões.
 
 ## Exemplos
 

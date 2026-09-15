@@ -1,11 +1,8 @@
-# Registro técnico: a forma de escrever (questão, espelho, flashcard)
-
-> A forma de escrever é a mesma em todo texto que estas skills produzem: enunciado, espelho,
-> comentário, flashcard e plano de estudo. Só a quantidade de detalhe varia por gênero.
+# Registro técnico: questões, espelhos e flashcards
 
 ## A forma, mínimo executável
 
-Uma linha por regra.
+Regras de revisão aplicáveis a este pacote.
 
 1. **Travessão longo, nunca em prosa.** Vírgula, dois-pontos, parêntese ou ponto.
 2. **Sem aposto epitético, título-tese ou frame de ênfase.** Teste: apague o que vem depois do
@@ -20,6 +17,8 @@ Uma linha por regra.
    *mostra, demonstra* para evidência robusta; *confirma, estabelece* só quando critério diagnóstico
    ou evidência conclusiva fecha o caso, nunca como intensificador; *comprova* e *prova* nunca.
 
+Ao terminar, revisar o material com as seis regras acima e os dois testes abaixo.
+
 ## ⚠️ A dosagem aqui é o oposto da de slide
 
 Este arquivo traz só o eixo da forma. O eixo da quantidade é próprio de cada gênero, e o destas
@@ -32,7 +31,7 @@ skills puxa para **mais** conteúdo, não menos:
   de contexto.
 
 Não importar daqui nenhuma regra de "seja breve" ou "não explique". Aquilo é dosagem de slide,
-onde o apresentador fala ao vivo. Cortar conteúdo destes artefatos os quebra. A versão correta costuma
+que acompanham uma exposição oral. Cortar conteúdo destes artefatos os quebra. A versão correta costuma
 ficar **mais longa**, e aqui isso não é problema.
 
 **Exceção própria do gênero:** em texto que vai para o Anki, `<` e `>` viram tag HTML e o corte
@@ -54,8 +53,8 @@ por autofagia."*
 | Símbolo em prosa | struma ovarii + CDT | struma ovarii e CDT |
 | Frame de ênfase | O ponto crítico é que o tecido é funcionante | O tecido ectópico é funcionante |
 
-Direção constante do verbo: do genérico para o que nomeia o processo. *Produz* vira
-*sintetiza*; *reconhecido* vira *diagnosticado*; *captação* vira *captação do iodo radioativo*
+Direção constante do verbo: do genérico para o que nomeia o processo. No TCC, *produz* virou
+*sintetiza*; *reconhecido* virou *diagnosticado*; *captação* virou *captação do iodo radioativo*
 (moldura sai, referente completo entra).
 
 ## Dois testes antes de entregar

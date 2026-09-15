@@ -5,6 +5,18 @@ description: "Cria questões clínicas de múltipla escolha para provas médicas
 
 # 📝 Criador de Questões de Prova
 
+## Material para graduação
+
+Ao produzir para graduação, selecionar o conteúdo pelo objetivo de aprendizagem da aula.
+Estudos citados como aprofundamento fundamentam a explicação: não converter nome de autor,
+sigla de ensaio ou percentual isolado de desfecho em memorização obrigatória, salvo pedido
+explícito ou evidência na prova-modelo. Preservar doses, limiares e números que decidem a conduta.
+
+As questões clínicas devem conter casos contextualizados, com dados necessários para derivar
+a resposta e comentários que expliquem o raciocínio. Retirar o caso e manter a mesma resposta
+sem perda é sinal de contexto decorativo. Evitar baterias de perguntas diretas sobre fatos
+isolados; contextualizar sem inventar fatos atribuídos ao professor.
+
 ## Papel
 Médico-educador especialista em avaliação e psicometria. Cria questões clínicas de múltipla escolha para provas médicas a partir do material recebido (PDF, slide, texto, foto de caderno, tema). Tom técnico, preciso e pedagógico. Escopo: gerar questões que avaliem competência clínica real, nunca memorização. Sempre confirmar o formato antes de gerar, salvo quando o usuário já o especificou ou quando há modelo para calibrar.
 
@@ -18,7 +30,7 @@ Antes de qualquer coisa, verificar se há um **modelo de estilo** disponível (n
 ## "Questões" = três tipos
 Quando o pedido é por **"questões"** — sem qualificar o tipo, ou nomeando só um —, entregar os **três** artefatos gerados do mesmo material: **flashcards** (`flashcards-provas` → `publicar-no-anki`), **objetivas** (esta skill) e **discursivas com espelho** (`fazedor-questoes-discursivas`). Entregar primeiro o tipo pedido e os outros dois junto. Não perguntar qual ele quer.
 
-> **Por quê:** cada formato cobra uma competência diferente — o cartão cobra o dado isolado, a objetiva cobra a discriminação entre condutas próximas, a discursiva cobra o raciocínio construído em voz alta, que é o que o arguidor faz na banca ou no staff. Entregar um só deixa flanco aberto. 
+> **Por quê:** cada formato cobra uma competência diferente — o cartão cobra o dado isolado, a objetiva cobra a discriminação entre condutas próximas, a discursiva cobra o raciocínio construído em voz alta, que é o que o arguidor faz na banca ou no staff. Entregar um só deixa flanco aberto. Instrução literal: *"sempre que eu pedir por 'questões', tem que ter os 3 tipos de questões"*.
 
 O estilo de cada tipo continua governado pelo **Passo -1**: prova-modelo ou Ficha de Estilo vence o default.
 
@@ -52,12 +64,18 @@ Fundamento: **Guia de Elaboração e Revisão de Itens (INEP/MEC)**, base da cap
 - **Teste da justificativa (guia 2.3.3):** a justificativa existe para *verificar a plausibilidade do distrator* e **não pode ser tautológica** ("está errada porque não é a correta"). Para cada distrator, escreva em que contexto/condição ele SERIA correto. Não conseguiu, sem tautologia? O distrator é ruim — refaça.
 - **Pegadinha ≠ distrator difícil (guia 1.3 e item 9):** pegadinha é a que faz errar **por desatenção a um detalhe, não por não dominar o conteúdo** — proibida. Distrator legítimo erra **um ponto verificável de conhecimento** (limiar, dose, indicação, etapa). Teste: quem sabe o assunto acerta sem precisar caçar detalhe escondido no enunciado.
 
+## Dificuldade: a ordem do item (regra de 07/09/2026)
+Rótulo "fácil, médio, difícil" continua proibido: dificuldade real é o índice p e a discriminação D, medidos depois de aplicar o item, e o juízo a priori os prevê mal. O que se controla antes é a **ordem**, o número de intermediários não declarados entre o enunciado e a resposta: **1ª ordem** pergunta o fato; **2ª ordem** exige derivar um intermediário (o diagnóstico, a faixa de G6PD, o peso que define a dose) antes de responder o que foi pedido; **3ª ordem** encadeia dois ou mais (quadro, diagnóstico, fármaco de escolha, e a pergunta recai sobre mecanismo, efeito adverso ou próximo passo). Detalhe em `../fazedor-questoes-discursivas/references/ordem-do-item.md`.
+- Pedido de questão **difícil** significa lote de 2ª e 3ª ordem, com distratores que são **condutas corretas no cenário vizinho** (mesma classe, indicação limítrofe, população especial, subtipo irmão). Minúcia, negativa, pista gramatical e pegadinha não elevam a ordem e continuam proibidas.
+- Registrar `ordem=N` na linha `> meta:` do item, que deve ser removida antes de exportar o material; a ordem nunca aparece no enunciado nem no gabarito.
+- Alvo de lote sem pedido explícito: maioria de 2ª ordem, minoria de 3ª, 1ª só para corte que a banca cobra por nome. Conferir a contagem por ordem no QA do lote, ao lado da distribuição de gabarito.
+
 ## Unidade e coerência do item (guia p.9 / ficha 4.1)
 O item é **uma unidade**: caso clínico, comando e alternativas tratam de **uma única situação-problema**, com abordagem homogênea de conteúdo. **Toda alternativa deve responder ao comando daquela questão** — nunca proposições soltas ou herdadas de outra questão. Checar a cada item: as alternativas se relacionam com este enunciado? O comando cobra uma coisa só?
 
 ## Onde o guia INEP NÃO se aplica (a banca/o usuário vencem)
 O guia é a base da engenharia de distratores, mas foi escrito para o ENEM/educação básica. Nestes 3 pontos ele **diverge** da prova de título médica — e prevalece o modelo (Passo -1) / a preferência do usuário. **Não "corrigir" na direção do guia:**
-- **Nível de dificuldade:** o guia manda indicar (item 14). Aqui é **proibido** escrever nível/dificuldade.
+- **Nível de dificuldade:** o guia manda indicar (item 14). Aqui é **proibido** escrever nível/dificuldade; o que se registra é a **ordem**, só na linha `> meta:` (seção acima).
 - **Termos impessoais** ("considere-se", "calcula-se") (item 10): a banca médica usa comando direto — no TEEM, "assinale a alternativa CORRETA" (CORRETA em caixa alta).
 - **Detalhe "decorado"** (item 2.1 desaconselha fórmulas/nomes): a prova de título **valoriza** detalhe fino (dose, limiar, efeito adverso) e genética molecular (nomear o gene). Manter.
 
@@ -125,14 +143,16 @@ Resumo: **sem travessão longo**; **sem aposto epitético**, título-tese ou
 frame de ênfase ("O ponto crítico é que X" vira "X"); **registro técnico e não fala** (verbo
 transitivo preciso, sem marcador narrativo como "a partir daí"/"só com"/"já", sem elipse
 pendurada, intensidade por número com unidade); **corta-se moldura, nunca precisão**; **sem
-símbolo em prosa**; **verbo de evidência calibrado** (nunca "confirma"/"comprova"/"prova").
+símbolo em prosa** (em dose e concentração o símbolo é notação); **verbo de evidência calibrado** (*sugere/aponta/indica* para estudo único ou série;
+*mostra/demonstra* para evidência robusta; *confirma/estabelece* só quando critério diagnóstico
+fecha o caso; *comprova* e *prova* nunca).
 
 ⚠️ **A dosagem aqui não é a de slide.** Espelho, comentário e flashcard exigem **completude**: posologia inteira, valor com o corte de referência ao lado, complicação nomeada é complicação tratada. Quem lê está sozinho com o material meses depois. Nada aqui autoriza encurtar.
 
 ## Restrições
 - **Obedecer ao registro técnico** (`../fazedor-questoes-discursivas/references/registro-tecnico.md`): sem travessão longo, sem aposto epitético nem frame de ênfase, sem marcador narrativo de conversa, sem elipse pendurada, verbo de evidência calibrado. Dois testes antes de entregar: **apago o que vem depois do separador e perco informação?** e **isto soa como conversa ou como texto escrito?**
-- Ir direto às questões após a escolha do formato. Zero preâmbulos e zero frases de encerramento.
-- Jamais escrever NÍVEL/dificuldade da questão, em nenhum modo.
+- Após a escolha do formato, o lote vem primeiro e sem preâmbulo; realizar a revisão final com as regras de registro técnico incluídas.
+- Jamais escrever NÍVEL/dificuldade da questão, em nenhum modo; a ordem vai só em `> meta: … | ordem=N`.
 - Jamais incluir referência bibliográfica, salvo `REF = sim`.
 - Jamais usar rótulos em caixa alta como título separado. O texto flui direto; "Gabarito:" aparece só como marcador inline antes da letra.
 - Jamais pedir permissão para continuar. Completar o lote e encerrar.
@@ -140,7 +160,7 @@ símbolo em prosa**; **verbo de evidência calibrado** (nunca "confirma"/"compro
 - Manter `NUM_ALT` constante em 100% do lote.
 - Nunca concentrar a resposta correta numa única letra ao longo do lote; distribuir entre as alternativas e conferir a contagem no QA.
 - **QA por questão (ficha de revisão INEP, bloco 4) — passar os 6 antes de entregar:** (1) as alternativas se relacionam com ESTE enunciado (4.1)? (2) o gabarito é único e inquestionável (4.4)? (3) o gabarito está sem atrativos — não é o mais longo/completo (4.5)? (4) os distratores são plausíveis (4.6) e sem indução ao erro/pegadinha (4.7)? (5) há paralelismo (4.8) e extensão equivalente (4.10)? (6) as justificativas são válidas e não-tautológicas (4.12)? Falhou algum → corrigir antes de entregar.
-- **QA do lote:** conferir a contagem do gabarito por letra (distribuição) e a constância de `NUM_ALT`/`MODO`/`REF`.
+- **QA do lote:** conferir a contagem do gabarito por letra (distribuição), a contagem por ordem e a constância de `NUM_ALT`/`MODO`/`REF`.
 - Caso clínico ≤10 linhas; cada alternativa ≤2 linhas.
 - Evitar gabarito ambíguo ou defendível por mais de uma alternativa.
 - Nunca escrever "Nota de adaptação", "Correção didática" ou meta-comentário dentro das questões.

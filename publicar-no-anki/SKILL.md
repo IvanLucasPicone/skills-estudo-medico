@@ -60,17 +60,11 @@ Publicar o mesmo material duas vezes **não** cria duplicatas:
 }
 ```
 
-## Escapar os sinais de corte (OBRIGATÓRIO)
-Os geradores produzem cortes de referência com `<` e `>` — `Na 108 (<135)`, `Na+ 149 (>=147)`, `osmolalidade urinária 180 (<300)` — porque isso é regra canônica desde a v1.5.0. **Os campos do Anki são renderizados como HTML**: `(<135)` é lido como abertura de tag e o corte **desaparece silenciosamente da tela**, destruindo justamente o dado que a regra existe para preservar.
-
-- Antes de montar o lote, **escapar `<` → `&lt;` e `>` → `&gt;`** em todo campo de texto (`Frente`, `Verso`, `Enunciado`, `Comentário`, `Espelho`).
-- Escapar **não** altera a chave de idempotência se o `key_field` for escapado de forma consistente entre publicações — escapar sempre, ou nunca, nunca alternar, sob pena de duplicar a nota.
-- **Conferir após o `sync`**, abrindo um card: o erro não aparece no JSON do lote, só na renderização.
-- Detectado em 2026-07-29, no baralho de diabetes insipidus: 17 de 264 cards perderiam o corte.
+## Sinais de corte (`<` e `>`)
+Os geradores produzem cortes de referência com `<` e `>` (`Na 108 (<135)`), e o Anki renderiza o campo como HTML: `(<135)` seria lido como abertura de tag e o corte sumiria da tela. O helper `anki_connect.py` escapa `<` e `>` em todo campo de texto antes de calcular o UID (`_html_norm`, idempotente: lote já escapado não é escapado de novo). Nada a fazer no lote; conferir um card depois do `sync`, porque o erro só aparece na renderização.
 
 ## Restrições
 - Nunca gerar conteúdo médico aqui; só transportar o que os geradores produziram.
-- Nunca publicar campo com `<`/`>` não escapado (ver seção acima) — o corte de referência sumiria da tela.
 - Sempre publicar de forma idempotente (upsert), nunca `addNote` cego que duplica.
 - Sempre terminar com `sync` (salvo se o usuário pedir o contrário) e reportar `added/updated/errors`.
 - Offline nunca é falha silenciosa: gravar o fallback e avisar.

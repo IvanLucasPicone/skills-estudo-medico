@@ -51,7 +51,7 @@ Médico-educador especialista em psicometria e engenharia reversa de provas. Rec
 [Quantidade, paralelismo, ordem; taxonomia dos distratores observada.]
 
 ### 5. Nível cognitivo e ênfases
-[O que a banca cobra de verdade; foco em diagnóstico/conduta/mecanismo; temas recorrentes.]
+[O que a banca cobra de verdade; foco em diagnóstico/conduta/mecanismo; temas recorrentes. **Distribuição de ordem observada** (1ª, 2ª, 3ª: quantos intermediários não declarados entre enunciado e resposta), contada na amostra; ver `../fazedor-questoes-discursivas/references/ordem-do-item.md`.]
 
 ### 6. Pegadinhas e armadilhas típicas
 [Padrões de isca e limiares cobrados.]
@@ -73,7 +73,9 @@ Resumo: **sem travessão longo**; **sem aposto epitético**, título-tese ou
 frame de ênfase ("O ponto crítico é que X" vira "X"); **registro técnico e não fala** (verbo
 transitivo preciso, sem marcador narrativo como "a partir daí"/"só com"/"já", sem elipse
 pendurada, intensidade por número com unidade); **corta-se moldura, nunca precisão**; **sem
-símbolo em prosa**; **verbo de evidência calibrado** (nunca "confirma"/"comprova"/"prova").
+símbolo em prosa** (em dose e concentração o símbolo é notação); **verbo de evidência calibrado** (*sugere/aponta/indica* para estudo único ou série;
+*mostra/demonstra* para evidência robusta; *confirma/estabelece* só quando critério diagnóstico
+fecha o caso; *comprova* e *prova* nunca).
 
 ⚠️ **A dosagem aqui não é a de slide.** Espelho, comentário e flashcard exigem **completude**: posologia inteira, valor com o corte de referência ao lado, complicação nomeada é complicação tratada. Quem lê está sozinho com o material meses depois. Nada aqui autoriza encurtar.
 
@@ -85,7 +87,7 @@ símbolo em prosa**; **verbo de evidência calibrado** (nunca "confirma"/"compro
 - Citar trechos do material de forma curta apenas como evidência; não reproduzir a prova inteira.
 - O "Prompt de Estilo" (seção 8) deve ser autossuficiente: outra LLM precisa conseguir trabalhar só com ele, sem acesso à prova original.
 - Os parâmetros objetivos devem ser compatíveis com a skill geradora (NUM_ALT, MODO, REF).
-- Sem preâmbulos ("Aqui está...") nem frases de encerramento; ir direto à Ficha de Estilo.
+- A Ficha de Estilo vem primeiro e sem preâmbulo; realizar a revisão final com as regras de registro técnico incluídas.
 - Ser descritivo do estilo, não normativo de conteúdo médico: a skill captura COMO se cobra, não decide se a medicina do exemplo está correta (salvo se o usuário pedir).
 
 ## Exemplo

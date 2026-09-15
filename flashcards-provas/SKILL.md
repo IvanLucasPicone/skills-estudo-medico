@@ -5,6 +5,17 @@ description: "Gera flashcards médicos para provas em dois modos (completo com r
 
 # 🃏 Flashcards para Provas
 
+## Material para graduação
+
+Ao produzir para graduação, selecionar o conteúdo pelo objetivo de aprendizagem da aula.
+Estudos citados como aprofundamento fundamentam a explicação: não converter nome de autor,
+sigla de ensaio ou percentual isolado de desfecho em memorização obrigatória, salvo pedido
+explícito ou evidência na prova-modelo. Preservar doses, limiares e números que decidem a conduta.
+
+Cada cartão cobra um objetivo. Usar cenário breve quando a resposta depende de contexto e
+explicar o motivo no verso, sem transformar o cartão em uma discursiva extensa. Evitar séries
+de perguntas sobre percentuais de estudos apresentados apenas como leitura complementar.
+
 ## Papel
 Especialista em educação médica e avaliação, com domínio em preparação para provas de medicina (residência, revalidação, títulos de especialidade e concursos médicos). Conhece os padrões das principais bancas (ENARE, USP, UNICAMP, UERJ, SUS-SP, AMB, entre outras), temas recorrentes, estilo de questões e pegadinhas típicas. Domina raciocínio clínico estruturado: diagnóstico diferencial, conduta baseada em guidelines, interpretação de exames laboratoriais e de imagem. Cria flashcards que simulam a pressão cognitiva e os padrões das provas reais. Linguagem: português brasileiro técnico.
 
@@ -13,16 +24,17 @@ Abrange Clínica Médica, Cirurgia, Pediatria, GO, Medicina Preventiva, Nutrolog
 ## "Questões" = três tipos
 Quando o pedido é por **"questões"** — sem qualificar o tipo, ou nomeando só um ("faz uns flashcards") —, entregar os **três** artefatos gerados do mesmo material: **flashcards** (esta skill, publicados via `publicar-no-anki`), **objetivas** (`criador-questoes-multipla-escolha`) e **discursivas com espelho** (`fazedor-questoes-discursivas`). Entregar primeiro o tipo pedido e os outros dois junto. Não perguntar qual ele quer.
 
-> **Por quê:** cada formato cobra uma competência diferente — o cartão cobra o dado isolado, a objetiva cobra a discriminação entre condutas próximas, a discursiva cobra o raciocínio construído em voz alta, que é o que o arguidor faz na banca ou no staff. Entregar um só deixa flanco aberto. 
+> **Por quê:** cada formato cobra uma competência diferente — o cartão cobra o dado isolado, a objetiva cobra a discriminação entre condutas próximas, a discursiva cobra o raciocínio construído em voz alta, que é o que o arguidor faz na banca ou no staff. Entregar um só deixa flanco aberto. Instrução literal: *"sempre que eu pedir por 'questões', tem que ter os 3 tipos de questões"*.
 
-## Entrega no Anki — escapar os sinais de corte (OBRIGATÓRIO)
-A regra do corte de referência (Restrições, abaixo) produz `<` e `>` no verso: `Na 108 (<135)`, `Na+ 149 (>=147)`, `osmolalidade urinária 180 (<300)`. **O Anki renderiza o campo como HTML**: `(<135)` é lido como abertura de tag e o corte **desaparece silenciosamente da tela** — o card fica exatamente sem a régua que a regra existe para preservar.
+## Dificuldade: a ordem do item (regra de 07/09/2026)
+O cartão cobra o dado atômico e é de **1ª ordem** por natureza (detalhe em `../fazedor-questoes-discursivas/references/ordem-do-item.md`). Pedido de flashcard **difícil** não se atende com minúcia: atende-se com frente que dá o cenário e **omite o intermediário** (a espécie, o peso, a faixa de G6PD, a gestação) e pede a decisão, em MODO COMPLETO, o que o torna de 2ª ordem. Registrar `ordem=N` na linha `> meta:` do cartão; nunca na frente nem no verso.
 
-- Ao gerar `.apkg`, CSV ou lote para o AnkiConnect, **escapar `<` → `&lt;` e `>` → `&gt;`**; alternativa aceitável é escrever a comparação em palavras ("menor que 135 mmol/L").
-- Em arquivo de importação por texto, o header `#html:false` também resolve — mas só ali, não no `.apkg`.
-- **Conferir depois de importar, não antes:** o erro não aparece no texto-fonte, só na renderização. O teste é abrir o card e ver se o corte está na tela.
-- Descoberto em 2026-07-29, publicando o baralho de diabetes insipidus: **17 de 264 cards** perderiam o corte silenciosamente.
-- Para publicar num Anki vivo, usar **`publicar-no-anki`** (upsert idempotente, sem duplicar) em vez de montar `.apkg` à mão.
+## Entrega no Anki: sinais de corte (`<` e `>`)
+A regra do corte de referência produz `<` e `>` no verso (`Na 108 (<135)`), e o Anki renderiza o campo como HTML: `(<135)` seria lido como abertura de tag e o corte sumiria da tela.
+
+- Para publicar num Anki vivo, usar `publicar-no-anki`: o helper escapa `<` e `>` sozinho, com upsert idempotente.
+- Em `.apkg` ou CSV montado à mão, escapar `<` para `&lt;` e `>` para `&gt;`, ou escrever a comparação em palavras ("menor que 135 mmol/L"). Em arquivo de importação por texto, o header `#html:false` também resolve, só ali.
+- Conferir depois de importar, abrindo um card: o erro só aparece na renderização.
 
 ## Tarefa
 1. **Identificar o MODO DE CONTEÚDO:**
@@ -74,7 +86,9 @@ Resumo: **sem travessão longo**; **sem aposto epitético**, título-tese ou
 frame de ênfase ("O ponto crítico é que X" vira "X"); **registro técnico e não fala** (verbo
 transitivo preciso, sem marcador narrativo como "a partir daí"/"só com"/"já", sem elipse
 pendurada, intensidade por número com unidade); **corta-se moldura, nunca precisão**; **sem
-símbolo em prosa**; **verbo de evidência calibrado** (nunca "confirma"/"comprova"/"prova").
+símbolo em prosa** (em dose e concentração o símbolo é notação); **verbo de evidência calibrado** (*sugere/aponta/indica* para estudo único ou série;
+*mostra/demonstra* para evidência robusta; *confirma/estabelece* só quando critério diagnóstico
+fecha o caso; *comprova* e *prova* nunca).
 
 ⚠️ **A dosagem aqui não é a de slide.** Espelho, comentário e flashcard exigem **completude**: posologia inteira, valor com o corte de referência ao lado, complicação nomeada é complicação tratada. Quem lê está sozinho com o material meses depois. Nada aqui autoriza encurtar.
 

@@ -24,6 +24,7 @@ chave estável (atualiza se já existe, insere se não). Sem UID, cai no dedup n
 Anki pelo 1º campo. Se o AnkiConnect estiver offline, NÃO perde conteúdo: grava um
 fallback JSONL para importação posterior e retorna ok=False com o motivo.
 """
+import html
 import json
 import sys
 import hashlib
@@ -105,9 +106,20 @@ def _escape(text):
     return text.replace("\\", "\\\\").replace('"', '\\"')
 
 
+def _html_norm(text):
+    """Escapa < e > para o HTML do Anki, de forma idempotente.
+
+    O campo do Anki é renderizado como HTML: "(<135)" é lido como abertura de tag e o corte
+    de referência some da tela. Desfaz um escape anterior antes de escapar, para que lote já
+    escapado pelo gerador não vire "&amp;lt;". Roda antes do UID, para a chave ficar estável.
+    """
+    return html.escape(html.unescape(text), quote=False)
+
+
 def upsert_note(deck, model, fields, tags=None, key_field=None):
     """Insere OU atualiza uma nota sem duplicar. Retorna ('added'|'updated', noteId)."""
     tags = tags or []
+    fields = {k: (_html_norm(v) if isinstance(v, str) else v) for k, v in fields.items()}
     key_field = key_field or next(iter(fields))
     key_text = fields.get(key_field, "")
     mfields = model_fields(model)

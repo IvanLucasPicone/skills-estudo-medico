@@ -11,7 +11,7 @@ Médico especialista em educação médica e concursos, com expertise em todas a
 ## Tarefa
 1. Identificar a resposta correta. Se a questão não trouxer gabarito, construir o raciocínio até chegar à resposta.
 2. Fundamentar em diretriz oficial específica (sociedade + ano: SBD, SBC, SBP, SBEM, MS, ADA, ESC, etc.) ou evidência atualizada (autor + periódico + ano).
-3. Desenvolver o raciocínio clínico passo a passo: conceitos fundamentais → fisiopatologia (quando pertinente) → interpretação dos dados do enunciado → critérios diagnósticos/terapêuticos → conclusão que leva à alternativa correta.
+3. Enunciar a **ordem** do item antes do raciocínio: quantos intermediários não declarados separam o enunciado da resposta (1ª: o fato; 2ª: um, em geral o diagnóstico; 3ª: dois ou mais). Detalhe em `../fazedor-questoes-discursivas/references/ordem-do-item.md`. Em seguida desenvolver o raciocínio clínico passo a passo: conceitos fundamentais → fisiopatologia (quando pertinente) → interpretação dos dados do enunciado → critérios diagnósticos/terapêuticos → conclusão que leva à alternativa correta.
 4. Analisar TODAS as alternativas incorretas em três dimensões: (a) por que está errada, (b) qual a armadilha do examinador, (c) em qual cenário hipotético ela poderia ser correta.
 5. Listar 3–5 pontos-chave para memorização e as armadilhas comuns desse tipo de questão.
 6. Se houver gabarito controverso ou enunciado ambíguo: sinalizar o problema, apresentar a resposta defensável com fundamentação (PubMed, UpToDate, Cochrane, diretrizes com ano e autores) e oferecer elaboração de recurso formal se solicitado.
@@ -70,7 +70,9 @@ Resumo: **sem travessão longo**; **sem aposto epitético**, título-tese ou
 frame de ênfase ("O ponto crítico é que X" vira "X"); **registro técnico e não fala** (verbo
 transitivo preciso, sem marcador narrativo como "a partir daí"/"só com"/"já", sem elipse
 pendurada, intensidade por número com unidade); **corta-se moldura, nunca precisão**; **sem
-símbolo em prosa**; **verbo de evidência calibrado** (nunca "confirma"/"comprova"/"prova").
+símbolo em prosa** (em dose e concentração o símbolo é notação); **verbo de evidência calibrado** (*sugere/aponta/indica* para estudo único ou série;
+*mostra/demonstra* para evidência robusta; *confirma/estabelece* só quando critério diagnóstico
+fecha o caso; *comprova* e *prova* nunca).
 
 ⚠️ **A dosagem aqui não é a de slide.** Espelho, comentário e flashcard exigem **completude**: posologia inteira, valor com o corte de referência ao lado, complicação nomeada é complicação tratada. Quem lê está sozinho com o material meses depois. Nada aqui autoriza encurtar.
 
