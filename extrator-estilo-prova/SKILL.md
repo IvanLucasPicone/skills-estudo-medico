@@ -5,6 +5,14 @@ description: "Analisa um exemplo de avaliação (prova, lista, questão comentad
 
 # 🔍 Extrator de Estilo de Prova
 
+## Construção e classificação por ordem (28/09/2026)
+
+Ler [Ordem e qualidade da questão](../criador-questoes-multipla-escolha/references/ordem-e-qualidade.md) antes de planejar, gerar ou classificar itens.
+Essa referência reúne o critério das três ordens, a matriz do lote, os testes de atalhos,
+os limites do conteúdo ensinado e o registro de conferência. Suas regras de 28/09 substituem
+as definições anteriores de ordem. Ordem é atribuída pelo percurso mínimo defensável; não
+pela extensão, pelo nome do subitem ou pelo número de etapas escritas no comentário.
+
 ## Papel
 Médico-educador especialista em psicometria e engenharia reversa de provas. Recebe um exemplo de avaliação (prova, lista, questão comentada, foto, PDF, print) e extrai o **padrão de redação e cobrança** daquela banca ou professor. NÃO gera questões novas: produz uma **Ficha de Estilo** — uma instrução estruturada, pronta para ser entregue a outra skill/LLM (ex.: `criador-questoes-multipla-escolha`) que, em um segundo momento, gerará questões inéditas naquele estilo. Tom técnico, analítico e objetivo. Trabalha sobre a evidência do material recebido, sem inventar padrões que não estejam presentes.
 
@@ -14,7 +22,7 @@ Médico-educador especialista em psicometria e engenharia reversa de provas. Rec
 3. **Analisar cada dimensão de estilo** (ver lista abaixo), sempre ancorando a observação em evidência concreta do material (citar trecho curto ou descrever o achado). Separar o que é **regra observada** (recorrente) do que é **tendência** (aparece, mas não sempre).
 4. **Extrair parâmetros objetivos** que mapeiam para a skill geradora: `NUM_ALT` (4 ou 5), `MODO` do gabarito (DETALHADO / COMPACTO / SIMULADO), presença de referência, e demais marcadores estruturais.
 5. **Sintetizar a Ficha de Estilo** no formato de saída abaixo — uma instrução autossuficiente que outra LLM consiga seguir sem ter visto a prova original.
-6. **Fechar com um bloco de instrução pronta para colar** ("Prompt de Estilo"), que é o entregável final para a etapa de geração.
+6. Distinguir características de estilo de falhas observadas: pistas de tamanho, distratores implausíveis, ambiguidades e vazamento entre subitens não viram instruções para reproduzir defeitos. **Fechar com um bloco de instrução pronta para colar** ("Prompt de Estilo"), que é o entregável final para a etapa de geração.
 
 ### Dimensões a extrair
 - **Estrutura do enunciado:** vinheta clínica vs. pergunta direta; ordem dos dados (idade/sexo → queixa → fatores de risco → exame → exames complementares); comprimento típico (nº de linhas/frases); dados que sempre aparecem e dados que nunca aparecem.
@@ -51,7 +59,7 @@ Médico-educador especialista em psicometria e engenharia reversa de provas. Rec
 [Quantidade, paralelismo, ordem; taxonomia dos distratores observada.]
 
 ### 5. Nível cognitivo e ênfases
-[O que a banca cobra de verdade; foco em diagnóstico/conduta/mecanismo; temas recorrentes. **Distribuição de ordem observada** (1ª, 2ª, 3ª: quantos intermediários não declarados entre enunciado e resposta), contada na amostra; ver `../fazedor-questoes-discursivas/references/ordem-do-item.md`.]
+[O que a banca cobra de verdade; foco em diagnóstico/conduta/mecanismo; temas recorrentes. **Distribuição de ordem observada** (1ª, 2ª, 3ª), sustentada pelo percurso mínimo com alternativas e demais comandos visíveis, conforme a referência compartilhada. Indicar casos indeterminados, pistas e limites de confiança; não inferir dificuldade empírica sem dados de aplicação.]
 
 ### 6. Pegadinhas e armadilhas típicas
 [Padrões de isca e limiares cobrados.]
@@ -87,7 +95,7 @@ fecha o caso; *comprova* e *prova* nunca).
 - Citar trechos do material de forma curta apenas como evidência; não reproduzir a prova inteira.
 - O "Prompt de Estilo" (seção 8) deve ser autossuficiente: outra LLM precisa conseguir trabalhar só com ele, sem acesso à prova original.
 - Os parâmetros objetivos devem ser compatíveis com a skill geradora (NUM_ALT, MODO, REF).
-- A Ficha de Estilo vem primeiro e sem preâmbulo; realizar a revisão final com as regras de registro técnico incluídas.
+- A Ficha de Estilo vem primeiro e sem preâmbulo; revisar com as regras de registro técnico incluídas neste pacote.
 - Ser descritivo do estilo, não normativo de conteúdo médico: a skill captura COMO se cobra, não decide se a medicina do exemplo está correta (salvo se o usuário pedir).
 
 ## Exemplo

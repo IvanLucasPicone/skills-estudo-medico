@@ -1,8 +1,8 @@
-# Propósito: fazedor-questoes-discursivas
+# Propósito: comentador-questoes-prova
 
 Adaptação pública das fontes canônicas disponíveis em 01/10/2026.
 
-Classificar cada subitem considerando os comandos visíveis, impedir vazamento de respostas e limitar o arco terapêutico aos objetivos que o comportem. Preservar espelho completo, sem exigir conteúdo não ensinado.
+Identificar a ordem pelo percurso mínimo e expô-la apenas quando útil ou solicitada. Explicar todos os distratores sem inventar um cenário que torne verdadeira uma afirmação conceitualmente falsa.
 
 A referência compartilhada de ordem e qualidade concentra as regras dos cinco módulos de
 elaboração e análise. Manter pedido atual, modelo e padrão nessa precedência; não copiar

@@ -8,7 +8,7 @@ leia `SKILL.md`.
 
 | Skill | Função |
 |---|---|
-| `criador-questoes-multipla-escolha` | questões de múltipla escolha com 4 ou 5 alternativas e gabarito comentado, calibradas por prova-modelo quando houver |
+| `criador-questoes-multipla-escolha` | objetivas A–D em dois cadernos (resolução sem respostas e comentado); pedido ou modelo pode alterar o padrão |
 | `fazedor-questoes-discursivas` | questões discursivas com espelho de correção prescritível (dose, via, corte de referência) |
 | `flashcards-provas` | flashcards em modo completo (caso clínico) ou rápido (fato atômico), em CSV para Anki ou visual |
 | `comentador-questoes-prova` | resolve e comenta questão de múltipla escolha, alternativa por alternativa, com valor e corte de referência |
@@ -72,8 +72,9 @@ colou o link deste repositório ou anexou o ZIP pedindo para instalar, faça ist
 3. **Confirme** listando as skills carregadas, ou abrindo um `SKILL.md` copiado, e diga à pessoa
    quais das seis ficaram disponíveis.
 4. **Sem pasta de skills** (chat na web, agente sem suporte a skills): leia o `SKILL.md` da skill
-   pedida e siga o conteúdo dele como instruções desta conversa. Funciona, mas não persiste entre
-   conversas.
+   pedida **e as referências locais que ele indicar**, e aplique-os à tarefa nesta conversa.
+   O link não instala a skill nem garante sua recuperação em outra conversa. Se não conseguir
+   abrir os arquivos, peça o ZIP ou o conteúdo necessário; não diga que leu apenas por receber o link.
 
 Não é preciso instalar dependências. A única exceção é `publicar-no-anki`, que chama um Anki
 aberto com o complemento AnkiConnect por `scripts/anki_connect.py` (Python 3, sem pacote extra).
@@ -84,8 +85,12 @@ aberto com o complemento AnkiConnect por `scripts/anki_connect.py` (Python 3, se
   ancoram o gabarito no material; sem material, avisam que estão respondendo de conhecimento geral.
 - **Mande uma prova antiga da banca** quando tiver: `extrator-estilo-prova` extrai o padrão de
   redação e as outras skills passam a imitá-lo.
-- Um pedido por "questões" entrega os três tipos (flashcards, objetivas e discursivas) do mesmo
-  material.
+- Um pedido por "questões" sem especificar o tipo entrega flashcards, objetivas e discursivas.
+  Um ou dois tipos nomeados delimitam a entrega; não é preciso escrever "só".
+- Objetivas usam quatro alternativas e dois cadernos por padrão. Não há menu obrigatório para
+  reconfirmar esse formato. Quantidade e exceções vêm do pedido e da prova-modelo.
+- As três ordens descrevem o percurso de inferência, não dificuldade medida. Revisar os itens
+  mesmo quando seguem uma prova-modelo; não reproduzir pistas e ambiguidades da amostra.
 - `publicar-no-anki` é opcional: exige o Anki aberto com o complemento AnkiConnect instalado.
 
 ## Origem
@@ -93,6 +98,28 @@ aberto com o complemento AnkiConnect por `scripts/anki_connect.py` (Python 3, se
 Fonte mantida por Ivan Lucas Picone Borges dos Anjos (endocrinologista, HUAP/UFF). Este
 repositório distribui uma adaptação pública das fontes canônicas. Atualizações devem preservar exemplos genéricos e referências locais, sem depender da wiki privada.
 
-Sincronização de 15/09/2026: seis skills atualizadas com as revisões canônicas disponíveis até 13/09/2026; inclui regras para graduação, ordem do item, registro técnico e normalização HTML no helper do Anki. Os arquivos PURPOSE.md documentam o propósito dos três geradores. O recorte permanece em seis skills.
+Atualização de 01/10/2026: cinco skills de elaboração/análise alinhadas às fontes canônicas
+atuais, com referências locais de ordem e qualidade, exemplos e produção de blocos baseados
+em revisão. `publicar-no-anki` e seu helper foram preservados; as diferenças observadas no
+texto canônico eram convenções pessoais de baralho. O recorte permanece em seis skills.
+
+O pacote completo privado também contém organizador e resumidor; eles não fazem parte deste
+repositório. Este recorte não deve prometer um pacote completo de resumos. A exportação pareada
+é descrita de forma portátil, sem exigir scripts ou acesso ao ambiente privado. Os PURPOSE.md
+registram o alcance da adaptação.
+
+## Usar pelo link, instalar ou conectar um MCP
+
+- **Link/ZIP:** o agente lê a skill e suas referências para aplicar as instruções à tarefa.
+- **Instalação:** uma ferramenta compatível mantém os arquivos disponíveis para acionamento;
+  cópias instaladas precisam ser atualizadas, não acompanham o GitHub automaticamente.
+- **MCP:** oferece operações executáveis de um serviço conectado. Não é necessário para ler
+  estas instruções e gerar questões com as ferramentas que o agente já possui.
+
+Exemplo de pedido: "Leia o SKILL.md de criador-questoes-multipla-escolha deste repositório e
+suas referências. Use essas instruções para criar 20 questões a partir do PDF anexado."
+
+Conferir o material gerado e suas fontes. Compartilhar o repositório não compartilha o acervo
+privado do autor nem concede acesso a contas ou a um Anki local.
 
 O helper do Anki recebe campos de texto e normaliza entidades HTML antes de calcular o UID. Não enviar HTML de formatação nos campos: ele será tratado como texto. Remover linhas de metadados antes de exportar cartões.

@@ -5,6 +5,14 @@ description: "Gera flashcards médicos para provas em dois modos (completo com r
 
 # 🃏 Flashcards para Provas
 
+## Construção e classificação por ordem (28/09/2026)
+
+Ler [Ordem e qualidade da questão](../criador-questoes-multipla-escolha/references/ordem-e-qualidade.md) antes de planejar, gerar ou classificar itens.
+Essa referência reúne o critério das três ordens, a matriz do lote, os testes de atalhos,
+os limites do conteúdo ensinado e o registro de conferência. Suas regras de 28/09 substituem
+as definições anteriores de ordem. Ordem é atribuída pelo percurso mínimo defensável; não
+pela extensão, pelo nome do subitem ou pelo número de etapas escritas no comentário.
+
 ## Material para graduação
 
 Ao produzir para graduação, selecionar o conteúdo pelo objetivo de aprendizagem da aula.
@@ -21,13 +29,30 @@ Especialista em educação médica e avaliação, com domínio em preparação p
 
 Abrange Clínica Médica, Cirurgia, Pediatria, GO, Medicina Preventiva, Nutrologia, Endocrinologia, Emergências, Psiquiatria, Ética Médica e demais especialidades conforme solicitado. Quando o usuário não especificar área, priorizar temas transversais de alta incidência em provas de residência.
 
-## "Questões" = três tipos
-Quando o pedido é por **"questões"** — sem qualificar o tipo, ou nomeando só um ("faz uns flashcards") —, entregar os **três** artefatos gerados do mesmo material: **flashcards** (esta skill, publicados via `publicar-no-anki`), **objetivas** (`criador-questoes-multipla-escolha`) e **discursivas com espelho** (`fazedor-questoes-discursivas`). Entregar primeiro o tipo pedido e os outros dois junto. Não perguntar qual ele quer.
+## Tipos de questão conforme o pedido (28/09/2026)
 
-> **Por quê:** cada formato cobra uma competência diferente — o cartão cobra o dado isolado, a objetiva cobra a discriminação entre condutas próximas, a discursiva cobra o raciocínio construído em voz alta, que é o que o arguidor faz na banca ou no staff. Entregar um só deixa flanco aberto. Instrução literal: *"sempre que eu pedir por 'questões', tem que ter os 3 tipos de questões"*.
+Sem tipo especificado, entregar os três tipos: flashcards (`flashcards-provas`), objetivas
+(`criador-questoes-multipla-escolha`) e discursivas com espelho (`fazedor-questoes-discursivas`).
+Se o usuário nomear um tipo, entregar somente esse tipo; se nomear dois, entregar somente os
+dois. Não é necessário escrever “só” ou “apenas”: “faça flashcards” já delimita a entrega.
+Resolver o tipo pelo pedido e pelo contexto, sem acrescentar formatos não solicitados.
 
-## Dificuldade: a ordem do item (regra de 07/09/2026)
-O cartão cobra o dado atômico e é de **1ª ordem** por natureza (detalhe em `../fazedor-questoes-discursivas/references/ordem-do-item.md`). Pedido de flashcard **difícil** não se atende com minúcia: atende-se com frente que dá o cenário e **omite o intermediário** (a espécie, o peso, a faixa de G6PD, a gestação) e pede a decisão, em MODO COMPLETO, o que o torna de 2ª ordem. Registrar `ordem=N` na linha `> meta:` do cartão; nunca na frente nem no verso.
+Regras comuns em [Escopo, modelo e revisão final](../criador-questoes-multipla-escolha/references/ordem-e-qualidade.md#escopo-modelo-e-revisão-final).
+As três ordens são outra dimensão: respeitar os tipos pedidos não dispensa os critérios
+de ordem e qualidade aplicáveis ao lote.
+
+## Ordem e objetivo do cartão
+
+Um objetivo por cartão admite primeira, segunda ou terceira ordem. No modo rápido, priorizar
+recuperação direta de fundamento relevante; no modo completo, usar cenário breve quando uma
+ou duas inferências encadeadas forem necessárias à resposta final. O verso explica essas etapas.
+Não confundir atomicidade do objetivo com ausência de raciocínio. Fornecer peso, tempo, exames
+e condições necessários quando não puderem ser derivados; omitir apenas conclusões que cabem
+ao aluno, com dados suficientes. Não transformar o cartão em várias perguntas independentes.
+
+Planejar as três ordens nos lotes gerais conforme a referência; respeitar pedido de modo rápido,
+quantidade ou ordem exclusiva e registrar a exceção. Registrar `ordem=N` em `> meta:`, sem
+imprimir o rótulo na frente ou no verso. Conferir o percurso com tudo que a frente mostra.
 
 ## Entrega no Anki: sinais de corte (`<` e `>`)
 A regra do corte de referência produz `<` e `>` no verso (`Na 108 (<135)`), e o Anki renderiza o campo como HTML: `(<135)` seria lido como abertura de tag e o corte sumiria da tela.
@@ -53,9 +78,15 @@ A regra do corte de referência produz `<` e `>` no verso (`Na 108 (<135)`), e o
 
 ## Modos de conteúdo
 
-**MODO COMPLETO** — raciocínio clínico profundo com caso clínico:
-- *Frente:* caso clínico objetivo com dados relevantes + pergunta clara (ex.: "Diagnóstico + conduta?", "Deficiência mais provável?", "Próximo passo?"). Texto direto, sem tags nem formatação extra.
-- *Verso:* texto fluido nesta sequência: Diagnóstico [resposta direta] → Conduta [tratamento/manejo] → Justificativa [integra pegadinha + raciocínio clínico] → "Não poderia ser X porque [motivo]. Não poderia ser Y porque [motivo]." → "Ou seja: [síntese memorável do conceito principal]".
+**MODO COMPLETO**: cenário breve e um objetivo final.
+- Frente: dados relevantes e uma pergunta clara, sem tags nem formatação extra. Perguntar a
+  decisão final; diagnóstico e escolha de conduta podem ser intermediários, sem pedir uma lista
+  de respostas independentes. Para primeira ordem da matriz, admitir fundamento direto.
+- Verso: responder ao objetivo e explicar os dados e intermediários necessários. Comparar a
+  hipótese próxima quando essa comparação esclarece o erro. Tratamento e diagnóstico diferencial
+  entram quando pertinentes ao objetivo, sem transformar todo cartão em plano de manejo.
+  Manter completude dos parâmetros terapêuticos quando terapia for incluída. Fechar com síntese
+  curta apenas quando acrescentar informação; não repetir a resposta por obrigação de formato.
 
 **MODO RÁPIDO** — memorização direta de fatos atômicos:
 - *Frente:* pergunta direta e curta, uma única informação por card (ex.: "Qual...?", "Cite...", "Dose de...?", "Critérios de...?", "Principal causa de...?").
@@ -96,37 +127,28 @@ fecha o caso; *comprova* e *prova* nunca).
 - **Obedecer ao registro técnico** (`../fazedor-questoes-discursivas/references/registro-tecnico.md`): sem travessão longo, sem aposto epitético nem frame de ênfase, sem marcador narrativo de conversa, sem elipse pendurada, verbo de evidência calibrado. Dois testes antes de entregar: **apago o que vem depois do separador e perco informação?** e **isto soa como conversa ou como texto escrito?**
 - Usar linguagem técnica precisa em português brasileiro.
 - Usar critérios objetivos em vez de linguagem imprecisa.
-- **Todo valor laboratorial citado no verso vem com o corte de referência ao lado**, entre parênteses — `Na 108 (<135)`, `sódio urinário 75 (>30)`, `osmolalidade urinária 620 (>100~>300)`; faixa quando o corte depende do contexto. **Toda terapia citada vem com o parâmetro numérico** (dose, via, taxa de infusão): `NaCl 3% (0,5 a 1,0 mL/kg/h)`, não "salina hipertônica". O verso é lido isolado meses depois e precisa **reancorar a régua**, não só apontar o achado. Vale mesmo quando o valor já aparece na frente do card.
-- **MODO COMPLETO:** sempre incluir diagnóstico diferencial ("Não poderia ser...") e fechar com "Ou seja:" contendo o conceito-chave; nunca fragmentar a resposta com labels.
+- **Todo valor laboratorial citado no verso vem com o corte de referência ao lado**, entre parênteses — `Na 108 (<135)`, `sódio urinário 75 (>30)`, `osmolalidade urinária 620 (>100~>300)`; faixa quando o corte depende do contexto. **Toda terapia citada vem com o parâmetro numérico** (dose, via, taxa de infusão): `NaCl 3% (0,5 a 1,0 mL/kg/h)`, não "salina hipertônica". Regra de autonomia do cartão: o verso é lido isolado meses depois e precisa **reancorar a régua**, não só apontar o achado. Vale mesmo quando o valor já aparece na frente do card.
+- **MODO COMPLETO:** um objetivo final e explicação suficiente das inferências; comparação diferencial quando pertinente. Não acrescentar diagnóstico, tratamento ou frases repetidas por obrigação de formato.
 - **MODO RÁPIDO:** manter 1 conceito atômico por card, respostas em no máximo 1–2 frases; sem justificativas longas, sem casos clínicos elaborados, sem "Não poderia ser...", sem "Ou seja:".
 - **Nunca usar:** emojis; tags de especialidade; marcadores de prioridade com estrelas; referências de guidelines com ano no final do card; labels fragmentados ("PEGADINHA:", "RACIOCÍNIO:", "ALTERNATIVAS:"); perguntas vagas ou ambíguas.
 
-## Exemplos
+## Exemplos de estrutura
 
-<example>
-<input>Crie flashcards sobre deficiência de B12 pós-bariátrica [MODO COMPLETO + ANKI]</input>
-<output>
+Usar o modelo didático fictício previamente ensinado em
+[exemplos-de-ordem.md](../criador-questoes-multipla-escolha/references/exemplos-de-ordem.md).
+Ele demonstra a construção; não corresponde a protocolo clínico real.
+
+MODO RÁPIDO, primeira ordem, FORMATO ANKI:
+
+```text
+Qual enzima é o alvo do procedimento Q?;Enzima N.
 ```
-Paciente, 45 anos, pós-operatório de bypass gástrico em Y de Roux há 2 anos, queixa de parestesias em MMII, dificuldade para caminhar e alteração de equilíbrio. Hemograma: VCM 110 fL, Hb 10,2 g/dL. Diagnóstico + conduta?;Diagnóstico: Deficiência de vitamina B12. Conduta: Reposição de B12 intramuscular (1000 mcg/semana por 4-8 semanas, depois mensal). Justificativa: Pós-bariátrico + anemia macrocítica + sintomas neurológicos = B12. O bypass exclui duodeno e jejuno proximal onde ocorre absorção de B12 ligada ao fator intrínseco. Sintomas neurológicos podem ser irreversíveis se não tratados. Não poderia ser deficiência de folato porque folato NÃO causa sintomas neurológicos. Não poderia ser deficiência de ferro porque causaria anemia MICROcítica. Ou seja: Pós-bariátrico + anemia macrocítica + neuropatia = sempre pensar em B12.
+
+MODO COMPLETO, terceira ordem, FORMATO ANKI:
+
+```text
+Uma amostra apresenta R positivo, S negativo e inibidor presente. Qual enzima é o alvo do procedimento indicado no modelo estudado?;Enzima N. Os ensaios definem o perfil Alfa. Nesse perfil, a presença do inibidor indica Q, cujo alvo é N. M seria o alvo sem inibidor, quando se aplicaria P.
 ```
-</output>
-</example>
 
-<example>
-<input>Crie flashcards rápidos visuais sobre micronutrientes [MODO RÁPIDO + VISUAL]</input>
-<output>
-1. **P:** Quais são as vitaminas lipossolúveis?
-
-   R: A, D, E e K.
-
----
-2. **P:** Qual vitamina está deficiente na pelagra?
-
-   R: Niacina (vitamina B3) - tríade dos 3 Ds: Dermatite, Diarreia, Demência.
-
----
-3. **P:** Qual o principal marcador bioquímico para avaliar desnutrição aguda?
-
-   R: Pré-albumina (meia-vida de 2-3 dias).
-</output>
-</example>
+Ambos têm um objetivo final. O segundo exige perfil e escolha do procedimento antes de responder.
+Preservar o mapa de ordem nos bastidores, sem incluir metadados nas linhas de importação do Anki.

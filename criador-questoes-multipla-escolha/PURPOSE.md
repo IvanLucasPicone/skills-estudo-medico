@@ -1,10 +1,15 @@
 # Propósito: criador-questoes-multipla-escolha
 
-Versão pública derivada da fonte canônica de estudo médico, incorporando as revisões de setembro de 2026.
+Adaptação pública das fontes canônicas disponíveis em 01/10/2026.
 
-- Preservar raciocínio clínico, valores com limites de referência e parâmetros terapêuticos úteis ao objetivo da questão.
-- Selecionar conteúdo para graduação pelo objetivo de aprendizagem; bibliografia complementar não implica memorização obrigatória de autores, siglas ou percentuais.
-- Classificar a ordem pelo número de intermediários não declarados, conforme a referência de ordem do item indicada no SKILL.md.
-- Usar casos cujo contexto altere a resposta; nos flashcards, manter um objetivo por cartão e cenário breve quando necessário.
+Aplicar A–D e dois cadernos por padrão; respeitar tipos pedidos, revisar o caso e os distratores e classificar pelo percurso mínimo. Selecionar objetivos de revisões com rastreabilidade e base única para os cadernos.
 
-As revisões de 07/09 acrescentaram a ordem do item. As de 13/09 reforçaram adequação à graduação e contextualização. Relatos pessoais, caminhos privados e dependências externas de revisão foram substituídos por instruções incluídas neste pacote.
+A referência compartilhada de ordem e qualidade concentra as regras dos cinco módulos de
+elaboração e análise. Manter pedido atual, modelo e padrão nessa precedência; não copiar
+falhas do modelo. Conteúdo complementar não amplia automaticamente o programa avaliado.
+
+Esta distribuição preserva seis skills. Os roteamentos privados para organizador e resumidor,
+os relatos pessoais e os caminhos da wiki não são dependências públicas. A exportação dos
+cadernos usa uma base única e as ferramentas disponíveis, sem exigir o exportador privado.
+Atualização de distribuição autorizada em 01/10/2026; conferência estrutural não equivale
+a validação clínica dos materiais que vierem a ser gerados.

@@ -5,6 +5,14 @@ description: "Cria questões discursivas clínicas com espelho de correção par
 
 # ✍️ Fazedor de Questões Discursivas
 
+## Construção e classificação por ordem (28/09/2026)
+
+Ler [Ordem e qualidade da questão](../criador-questoes-multipla-escolha/references/ordem-e-qualidade.md) antes de planejar, gerar ou classificar itens.
+Essa referência reúne o critério das três ordens, a matriz do lote, os testes de atalhos,
+os limites do conteúdo ensinado e o registro de conferência. Suas regras de 28/09 substituem
+as definições anteriores de ordem. Ordem é atribuída pelo percurso mínimo defensável; não
+pela extensão, pelo nome do subitem ou pelo número de etapas escritas no comentário.
+
 ## Material para graduação
 
 Ao produzir para graduação, selecionar o conteúdo pelo objetivo de aprendizagem da aula.
@@ -20,15 +28,16 @@ isolados; contextualizar sem inventar fatos atribuídos ao professor.
 ## Papel
 Médico-educador especialista em avaliação por respostas construídas (questões discursivas) e psicometria. Cria questões discursivas (dissertativas) clínicas para provas médicas, adaptáveis a qualquer especialidade, que exigem raciocínio clínico escrito e justificativa fundamentada. Tom técnico, preciso, pedagógico.
 
-## Calibração por modelo (PRIORIDADE MÁXIMA — Passo -1)
+## Calibração por modelo e revisão final (Passo -1)
 Antes de tudo, verificar se há um **modelo de estilo** (nesta conversa ou no projeto): (a) uma **prova-modelo** real do mesmo professor/banca OU (b) uma **Ficha de Estilo** (saída da skill `extrator-estilo-prova`). Havendo modelo:
 1. **Ler o padrão real:** estrutura do caso (vinheta única vs. caso com evolução temporal), grau de subdivisão em itens, extensão esperada da resposta por item, e o formato do espelho (ex.: pontuação fracionada somando ~1,0/caso, com respostas aceitas/parciais/recusadas — padrão TEEM — em vez de 10,0/questão).
-2. **Espelhar esse padrão em 100% do lote** — o modelo manda mais que este SKILL.md; mudando o conteúdo, manter o ESTILO do modelo.
+2. **Usar o modelo como referência principal de formato, estrutura e estilo.** Ele prevalece sobre os padrões genéricos da skill nesses aspectos, respeitando o pedido atual. Manter o estilo ao mudar o tema, sem reproduzir falhas de elaboração.
+3. **Revisar o lote completo depois de construí-lo sobre esse modelo.** Aplicar a referência Ordem e qualidade: corrigir pistas, ambiguidades, distratores implausíveis, respostas incompletas e vazamento entre subitens. Preservar a identidade da prova e a competência cobrada; fazer os ajustes necessários ao defeito, sem converter a prova em outro estilo. Conferir novamente chave/espelho e ordem efetiva após a correção. Falha remanescente impede a entrega.
 
 **Sem modelo algum**, usar as recomendações-padrão desta skill — em especial o **Padrão de qualidade (modo padrão)** logo abaixo, que é o alvo obrigatório.
 
 ## Padrão de qualidade (MODO PADRÃO — obrigatório quando não há modelo)
-Regra derivada de discursivas aprovadas em revisão manual, em que doses, detalhes práticos e critérios diagnósticos apareciam juntos. Sem prova-modelo, **toda** discursiva deve sair assim:
+Regra derivada de revisão manual de discursivas com doses, detalhes práticos e critérios diagnósticos. Sem prova-modelo, usar esse arco quando o objetivo for manejo clínico e as etapas estiverem no conteúdo ensinado. Para fundamentos, fisiologia ou objetivos sem terapêutica, adaptar o arco e o autoteste às demandas pertinentes; não impor prescrição, armadilha ou seguimento fora do escopo. Em qualquer formato, classificar cada subitem e preservar completude do que foi pedido:
 
 **1. Vinheta ancorada em números que decidem a resposta.** Idade, sexo, tempo de evolução e **laboratório/exames com valores concretos** que *determinam* a conduta — não enfeite. Se o caso é de fome óssea, o PTH pré-operatório e a fosfatase alcalina têm de estar lá; se é de hiponatremia, o sódio, as osmolalidades e o ácido úrico. Corte tudo que não muda a resposta.
 
@@ -40,7 +49,7 @@ Regra derivada de discursivas aprovadas em revisão manual, em que doses, detalh
    - **e) A ARMADILHA** — o detalhe que faz errar mesmo quem sabe o tema (o magnésio que trava a correção da hipocalcemia; a aquarese que sobrecorrige o sódio; o teste do ACTH falso-normal na insuficiência central recente; "iniciar × manter" a glargina na gestação).
    - **f) Seguimento: critério temporal e periodicidade** — quando reclassificar, de quanto em quanto tempo monitorizar, quando o quadro vira "permanente". Quase todo gerador esquece este item; ele é obrigatório aqui.
 
-**2.1. TESTE DA PRESCRIÇÃO** — critério que rege o item 2c. Regra extraída da revisão manual de um espelho de tireoidectomia por Graves, devolvido com o pedido de acrescentar as doses ("qual a dose do Lugol?"). O espelho tem de ser **prescritível**: com ele na mão, alguém escreve a prescrição inteira **sem consultar mais nada**. Para cada fármaco citado, entregar:
+**2.1. TESTE DA PRESCRIÇÃO** — critério que rege o item 2c. Regra extraída da revisão manual de espelhos que omitiam doses necessárias. O espelho tem de ser **prescritível**: com ele na mão, alguém escreve a prescrição inteira **sem consultar mais nada**. Para cada fármaco citado, entregar:
 
    - **Apresentação e concentração** — `gluconato de cálcio **10%**`, `solução de Lugol (**iodo forte 5% + iodeto de potássio 10%**)`.
    - **Quanto de princípio ativo há por unidade** — `1 ampola de **10 mL = 1 g de gluconato = 90 mg de cálcio elementar**`, `**~8 mg de iodo por gota** do Lugol`, `**~50 mg de iodeto por gota** do SSKI`, `1 g de carbonato = 400 mg de cálcio elementar`. **Sem isso, "1–2 ampolas" ou "5 gotas" não significa nada.**
@@ -55,7 +64,7 @@ Regra derivada de discursivas aprovadas em revisão manual, em que doses, detalh
    - **Frequência de monitorização com número** — `cálcio **6/6–12/12 h nas primeiras 24–48 h**`, não "seriado".
    - **Complicação nomeada = complicação tratada.** Se um item cita a complicação, o espelho traz **como tratá-la, com posologia completa**, mesmo que a pergunta só peça o reconhecimento. Citar "crise tireotóxica" obriga a trazer PTU, iodeto, betabloqueador e hidrocortisona **com doses**.
 
-   > **Por quê:** quem estuda pelo espelho prescreve na enfermaria. Um espelho que diz "iodeto por 7–10 dias" ensina a lembrar do iodeto, mas não ensina a prescrevê-lo — e a prova de título cobra justamente a dose. Cada bala acima é um lugar onde a versão anterior parou cedo demais.
+   > **Por quê:** quem estuda pelo espelho precisa recuperar os parâmetros terapêuticos. Um espelho que diz "iodeto por 7–10 dias" ensina a lembrar do iodeto, mas não ensina a prescrevê-lo — e a prova de título cobra justamente a dose. Cada bala acima é um lugar onde a versão anterior parou cedo demais.
 
 **3. Cada item pede algo verificável e fechado.** "Qual a dose, a via e a velocidade" — nunca "discuta o manejo". Um item = uma demanda respondível em 1–4 linhas.
 
@@ -65,7 +74,7 @@ Regra derivada de discursivas aprovadas em revisão manual, em que doses, detalh
 
 **6. Espelho: uma resposta por item, cada uma em linha própria, com os números-chave em negrito.** A resposta tem de conter os valores exatos (doses, cortes, prazos), não paráfrases. Sem pesos de pontuação no modo padrão (ver MODO 4).
 
-**6.1. TODO valor do caso citado no espelho vem acompanhado do seu corte de referência**, entre parênteses, imediatamente ao lado — e **toda terapia citada vem com o parâmetro numérico concreto**. Regra extraída da revisão manual do espelho de uma discursiva de SIADH:
+**6.1. TODO valor do caso citado no espelho vem acompanhado do seu corte de referência**, entre parênteses, imediatamente ao lado — e **toda terapia citada vem com o parâmetro numérico concreto**. Regra derivada de revisão manual de espelhos:
 
 | ❌ Não fazer | ✅ Fazer |
 |---|---|
@@ -80,26 +89,41 @@ Regra derivada de discursivas aprovadas em revisão manual, em que doses, detalh
 
 **7. Fonte nomeada por item ou por questão** — documento, ano e, quando possível, recomendação/página. Se o conteúdo não estiver na bibliografia do usuário, **sinalizar explicitamente** ("⚠ conteúdo de treinamento — verificar no PubMed"). Nunca apresentar treinamento como se fosse a diretriz que ele possui.
 
-**Autoteste antes de entregar** — a questão só passa se: (i) há pelo menos um item de posologia que sobrevive ao **Teste da prescrição** (item 2.1); (ii) há um item de armadilha; (iii) há um item de seguimento/critério temporal; (iv) todo número do espelho é rastreável à fonte citada; (v) nenhum item se responde com uma única palavra; (vi) **todo valor laboratorial citado no espelho traz o corte de referência ao lado, e toda terapia traz o parâmetro numérico** (item 6.1); (vii) **nenhum fármaco aparece sem dose, via e intervalo — nem os secundários, nem as alternativas** (item 2.1).
+**Autoteste antes de entregar** — para o arco terapêutico completo, a questão só passa se: (i) há pelo menos um item de posologia que sobrevive ao **Teste da prescrição** (item 2.1); (ii) há um item de armadilha; (iii) há um item de seguimento/critério temporal; (iv) todo número do espelho é rastreável à fonte citada; (v) nenhum item se responde com uma única palavra; (vi) **todo valor laboratorial citado no espelho traz o corte de referência ao lado, e toda terapia traz o parâmetro numérico** (item 6.1); (vii) **nenhum fármaco aparece sem dose, via e intervalo — nem os secundários, nem as alternativas** (item 2.1).
 
-## Dificuldade: a ordem do item (regra de 07/09/2026)
-Dificuldade real é medida depois (índice p e discriminação D); antes só se controla a **ordem**, o número de intermediários não declarados entre a vinheta e a resposta (1ª: o fato; 2ª: um intermediário, como o diagnóstico ou a faixa que define o esquema; 3ª: dois ou mais encadeados). Detalhe em `references/ordem-do-item.md`.
-- Na discursiva a ordem se lê por item do arco: A e B costumam ser de 1ª ou 2ª ordem; C a F, de 2ª ou 3ª. O item de **contraste** (regra 4) e o de **armadilha** (item 2e) são de 3ª ordem por construção.
-- Pedido de questão **difícil**: a vinheta omite o diagnóstico e o subtipo, e o aluno os deriva dos dados antes de prescrever; a posologia pedida depende de um intermediário (peso, atividade enzimática, gestação, recorrência), não de recall.
-- Registrar `ordem=N` (ordem predominante do arco) na linha `> meta:` da questão; nunca escrever nível ou ordem no enunciado.
+## Ordem por subitem
 
-## "Questões" = três tipos
-Quando o pedido é por **"questões"** — sem qualificar o tipo, ou nomeando só um —, entregar os **três** artefatos gerados do mesmo material: **flashcards** (`flashcards-provas` → `publicar-no-anki`), **objetivas** (`criador-questoes-multipla-escolha`) e **discursivas com espelho** (esta skill). Entregar primeiro o tipo pedido e os outros dois junto. Não perguntar qual ele quer.
+Aplicar a referência compartilhada: ordem depende do percurso mínimo, considerando os outros
+comandos visíveis. Contraste, armadilha e posologia não têm ordem automática. Omitir a conclusão
+que será inferida exige fornecer os dados que a sustentam; nunca esconder dados indispensáveis.
+Registrar o mapa de ordens por subitem e o apoio que um fornece ao outro. Corrigir comandos que
+entreguem respostas anteriores. Sequência de subitens não equivale a avaliações independentes.
 
-> **Por quê:** cada formato cobra uma competência diferente — o cartão cobra o dado isolado, a objetiva cobra a discriminação entre condutas próximas, a discursiva cobra o raciocínio construído em voz alta, que é o que o arguidor faz na banca ou no staff. Entregar um só deixa flanco aberto. Instrução literal: *"sempre que eu pedir por 'questões', tem que ter os 3 tipos de questões"*.
+O `ordem=N` global em `> meta:` indica apenas a ordem predominante; o mapa separado por subitem
+é obrigatório na conferência. O espelho explica o raciocínio necessário, aceita soluções
+equivalentes defensáveis e, quando houver pontos, explicita crédito parcial e tratamento de erro
+propagado entre subitens. Não exigir etapas que só aparecem no espelho ou conteúdo não ensinado.
 
-O estilo continua governado pelo **Passo -1**: prova-modelo ou Ficha de Estilo vence o default. Se o espelho for virar cartão de Anki (MODO 4), obedecer ao **escape dos sinais de corte** documentado em `flashcards-provas` — `(<135)` não escapado desaparece da tela.
+## Tipos de questão conforme o pedido (28/09/2026)
+
+Sem tipo especificado, entregar os três tipos: flashcards (`flashcards-provas`), objetivas
+(`criador-questoes-multipla-escolha`) e discursivas com espelho (`fazedor-questoes-discursivas`).
+Se o usuário nomear um tipo, entregar somente esse tipo; se nomear dois, entregar somente os
+dois. Não é necessário escrever “só” ou “apenas”: “faça flashcards” já delimita a entrega.
+Resolver o tipo pelo pedido e pelo contexto, sem acrescentar formatos não solicitados.
+
+Regras comuns em [Escopo, modelo e revisão final](../criador-questoes-multipla-escolha/references/ordem-e-qualidade.md#escopo-modelo-e-revisão-final).
+As três ordens são outra dimensão: respeitar os tipos pedidos não dispensa os critérios
+de ordem e qualidade aplicáveis ao lote.
+
+Se o espelho for virar cartão de Anki (MODO 4), obedecer ao escape dos sinais de corte
+documentado em `flashcards-provas`; não acrescentar cartões a um pedido apenas de discursivas.
 
 ## Tarefa
 1. Ao receber material (texto, PDF, slide, foto de caderno ou tema) sem formato definido, responder APENAS com o menu de formato e aguardar a escolha. Se o pedido já especificar o formato (ex.: "5 questões subdivididas com espelho de pontos"), pular o menu e gerar direto.
 2. Mapear a escolha em quatro variáveis e mantê-las constantes em 100% do lote: RESPOSTA (D dissertativa / C curta / H híbrida), ESTRUTURA (A comando único / B subdividida em itens), MODO (1 detalhado / 2 compacto / 3 treino / 4 espelho limpo) e REF (sim / não). Interpretar códigos em qualquer ordem; resposta incompreensível ou só o número de questões → assumir o padrão **H, B, 4, sim**, que é o que materializa o Padrão de qualidade acima.
-3. Para cada questão, montar caso clínico realista de até 10 linhas: idade, sexo (se relevante), queixa + tempo, fatores de risco, exame físico com achados relevantes, sinais vitais (quando alterarem o raciocínio) e exames essenciais — fluindo naturalmente para o comando. Excluir estado civil, escolaridade (salvo exposição ocupacional), achados genéricos e exames desnecessários. **No modo padrão, os exames trazem valores numéricos concretos que decidem a resposta** (item 1 do Padrão de qualidade).
-4. Redigir o comando ajustando os verbos à RESPOSTA: dissertativa (Explique, Justifique, Descreva, Analise, Correlacione, Discuta), curta (Cite, Indique, Nomeie, Liste, Determine), híbrida (misturar demandas de extensões variadas sobre o mesmo caso, sinalizando ao final de cada uma a extensão esperada — *(curta)*, *(direta)*, *(elaborada)*). Em ESTRUTURA=ITENS, subdividir em a), b), c), do raciocínio mais básico ao mais aplicado, cada item com pontuação própria (exceto no MODO 4). **No modo padrão, seguir o arco de 5–6 itens** do Padrão de qualidade (diagnóstico → mecanismo → posologia → transição → armadilha → seguimento).
+3. Para cada questão, montar caso clínico realista de até 10 linhas: idade, sexo (se relevante), queixa + tempo, fatores de risco, exame físico com achados relevantes, sinais vitais (quando alterarem o raciocínio) e exames essenciais — fluindo naturalmente para o comando. Excluir estado civil, escolaridade (salvo exposição ocupacional), achados genéricos e exames desnecessários. **Quando exames integram o objetivo, trazer valores numéricos concretos que decidem a resposta** (item 1 do Padrão de qualidade).
+4. Redigir o comando ajustando os verbos à RESPOSTA: dissertativa (Explique, Justifique, Descreva, Analise, Correlacione, Discuta), curta (Cite, Indique, Nomeie, Liste, Determine), híbrida (misturar demandas de extensões variadas sobre o mesmo caso, sinalizando ao final de cada uma a extensão esperada — *(curta)*, *(direta)*, *(elaborada)*). Em ESTRUTURA=ITENS, subdividir em a), b), c), do raciocínio mais básico ao mais aplicado, cada item com pontuação própria (exceto no MODO 4). **No modo padrão terapêutico, seguir o arco de 5–6 itens** do Padrão de qualidade (diagnóstico → mecanismo → posologia → transição → armadilha → seguimento).
 5. Construir o espelho de correção — núcleo da questão — listando elementos objetivamente verificáveis (conceito, valor de referência, conduta, justificativa) conforme o MODO: detalhado (pontos por elemento somando 10,0 por questão), compacto (pontos-chave em prosa de 3-6 linhas), treino (questões separadas por `---` e espelhos consolidados em bloco único ao final do lote) ou **espelho limpo (MODO 4, padrão): uma resposta por item, cada uma em linha própria, números-chave em negrito, SEM pontuação** — formato pronto para virar cartão de Anki.
 
 ## Menu de formato
@@ -182,21 +206,21 @@ fecha o caso; *comprova* e *prova* nunca).
 
 ## Restrições
 - **Obedecer ao registro técnico** (`references/registro-tecnico.md`): sem travessão longo, sem aposto epitético nem frame de ênfase, sem marcador narrativo de conversa, sem elipse pendurada, verbo de evidência calibrado. Dois testes antes de entregar: **apago o que vem depois do separador e perco informação?** e **isto soa como conversa ou como texto escrito?**
-- Após a escolha do formato, o lote vem primeiro e sem preâmbulo; realizar a revisão final com as regras de registro técnico incluídas.
+- Após a escolha do formato, o lote vem primeiro e sem preâmbulo; revisar com as regras de registro técnico incluídas neste pacote.
 - Manter RESPOSTA, ESTRUTURA, MODO e REF constantes em 100% do lote, com qualidade uniforme da primeira à última questão.
-- **No modo padrão, rodar o autoteste do Padrão de qualidade em cada questão antes de entregar** (posologia com dose+via+velocidade · item de armadilha · item de seguimento · números rastreáveis à fonte · nenhum item de uma palavra). Questão que falhar em qualquer um dos cinco: refazer, não entregar.
+- **No modo padrão terapêutico, rodar o autoteste do Padrão de qualidade em cada questão antes de entregar; nos demais objetivos, aplicar os critérios pertinentes e a conferência por subitem da referência compartilhada** (posologia com dose+via+velocidade · item de armadilha · item de seguimento · números rastreáveis à fonte · nenhum item de uma palavra). Questão que falhar em critério aplicável: refazer antes de entregar.
 - **Nunca escrever posologia vaga** ("repor cálcio", "corrigir o sódio", "fazer corticoide", "iodeto por 7–10 dias"). Todo fármaco citado — inclusive os secundários e as alternativas — passa pelo **Teste da prescrição** (item 2.1): apresentação/concentração, princípio ativo por unidade (gota, ampola, comprimido), dose, via, intervalo, diluente e velocidade, modo de administração, sequência entre fármacos, passo de titulação e teto. Complicação nomeada é complicação tratada, com doses.
 - **Nunca citar valor laboratorial no espelho sem o corte de referência ao lado** (item 6.1). `Na 108` sozinho é proibido; o correto é `Na 108 (<135)`. Vale para todo exame citado — sódio, osmolalidades, PTH, cortisol, TSH, cálcio, β-hCG, o que for. Mesma regra para terapia: se existe taxa/dose padrão, ela aparece.
 - Garantir que cada elemento do espelho seja objetivamente verificável por um corretor; em DETALHADO somar 10,0 por questão; em ESPELHO LIMPO não usar pontuação alguma (nem "0,2", nem "Parcial:", nem "Total").
 - Manter o caso clínico em no máximo 10 linhas e variar especialidade/contexto entre as questões quando o material permitir.
 - Escrever referência ABNT abreviada ao final de cada questão apenas se REF=sim.
 - Usar "Espelho de correção:" / "Espelho:" apenas como marcador inline — o texto flui direto.
-- Evitar: nível da questão escrito (a ordem vai só em `> meta: … | ordem=N`); rótulos em caixa alta como título; comando vago sem foco; demanda que se responde com uma única palavra; espelho genérico; termos absolutos; meta-comentário e emojis no corpo das questões.
+- Evitar: nível da questão escrito (a ordem vai só em `> meta: … | ordem=N`); rótulos em caixa alta como título; comando vago sem foco; demanda sem objetivo verificável; espelho genérico; termos absolutos; meta-comentário e emojis no corpo das questões.
 
 ## Exemplos
 
 ### Exemplo canônico do MODO PADRÃO (referência de qualidade)
-> Questão aprovada em revisão manual, com as posologias completadas pelo autor. Use-a como régua: a vinheta traz PTH, fosfatase alcalina e magnésio porque são eles que decidem a resposta; o item C passa no **Teste da prescrição** (concentração, mg de cálcio elementar por ampola, diluente, velocidade e equivalente por peso); o item D nomeia o **sal** e o teto da dose; o item E é a **armadilha** (magnésio) e converte o limiar em conduta dosada; e o item F fecha com o **critério temporal**.
+> Exemplo estrutural de questão com espelho completo. Conferir as fontes clínicas atuais antes de reutilizar suas condutas. Use-a como régua: a vinheta traz PTH, fosfatase alcalina e magnésio porque são eles que decidem a resposta; o item C passa no **Teste da prescrição** (concentração, mg de cálcio elementar por ampola, diluente, velocidade e equivalente por peso); o item D nomeia o **sal** e o teto da dose; o item E é a **armadilha** (magnésio) e converte o limiar em conduta dosada; e o item F fecha com o **critério temporal**.
 
 <example>
 <input>3 discursivas sobre pós-operatório de paratireoidectomia (sem prova-modelo)</input>

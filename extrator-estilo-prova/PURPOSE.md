@@ -1,8 +1,8 @@
-# Propósito: fazedor-questoes-discursivas
+# Propósito: extrator-estilo-prova
 
 Adaptação pública das fontes canônicas disponíveis em 01/10/2026.
 
-Classificar cada subitem considerando os comandos visíveis, impedir vazamento de respostas e limitar o arco terapêutico aos objetivos que o comportem. Preservar espelho completo, sem exigir conteúdo não ensinado.
+Descrever estilo com evidência da amostra, distinguindo-o de pistas, ambiguidades e outros defeitos. Classificar o percurso observado e seus limites sem alegar dificuldade empírica.
 
 A referência compartilhada de ordem e qualidade concentra as regras dos cinco módulos de
 elaboração e análise. Manter pedido atual, modelo e padrão nessa precedência; não copiar
