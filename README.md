@@ -95,7 +95,7 @@ aberto com o complemento AnkiConnect por `scripts/anki_connect.py` (Python 3, se
 
 ## Origem
 
-Fonte mantida por Ivan Lucas Picone Borges dos Anjos (endocrinologista, HUAP/UFF). Este
+Fonte mantida por Ivan Lucas Picone Borges dos Anjos (médico, residente de Endocrinologia e Metabologia, UFF/HUAP). Este
 repositório distribui uma adaptação pública das fontes canônicas. Atualizações devem preservar exemplos genéricos e referências locais, sem depender da wiki privada.
 
 Atualização de 01/10/2026: cinco skills de elaboração/análise alinhadas às fontes canônicas
